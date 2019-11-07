@@ -208,12 +208,51 @@
 
 .header-top-search-svg {
     fill: #fff;
-    color: aquamarine
+    color: aquamarine;
+    display: none;
+    
 }
 
 .header-top-search {
     margin: 55px 0 0 28px;
+/*    position: relative;*/
+    display: flex;
+    position: relative;
 }
+input[type="search"]{
+    width: 24px;
+    height: 24px;
+    outline: none;
+/*    background-image: url('http://s1.iconbird.com/ico/2013/9/452/w512h5121380477032search.png');*/
+    background-image:url(../img/lupa.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+/*    border: 1px solid gray;*/
+    border: none;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+}
+
+input[type="search"]:focus{
+    width: 300px;
+    transition: width 1s ease-out;
+    background-position: right;
+    border: 1px solid gray;
+}
+
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none; 
+}
+
 
 .header-top-search-svg:hover {
     fill: #c7b299;
@@ -1660,8 +1699,22 @@
     text-transform: uppercase;
 }
 @media screen and (max-width:576px) and (min-width:320px) {
-    .header {
-        min-height:inherit;
+    
+    .menu-toggle input:checked ~ .burger-menu-elem {
+        position: inherit;
+}
+    
+    .menu-toggle input:checked ~ .burger-menu-search {
+        top: 435px;
+        left: 310px;
+}
+    .menu-toggle input:checked ~ .burger-menu-recent {
+        top: 435px;
+        left: 270px;
+}
+         
+    .header{
+        min-height: 120px;
     }
     .burger {
         display: block;
@@ -1675,19 +1728,20 @@
     .header-top {
         position: relative;
     }
-
-    .header{
-        min-height: 656px;
-    }
+    
     .header-container {
         background-size: cover;
         background-position: center;
-        min-height: 656px;
+        min-height: 120px;
     }
 
     .link-logo {
         margin: 2%;
         float: right;
+        
+        position: absolute;
+        top: 25px;
+        left: 205px;
     }
 
     .header-top-nav {
