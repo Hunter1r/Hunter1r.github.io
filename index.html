@@ -11,12 +11,7 @@
     <div class="container">
         <header class="header">
 
-
             <div class="header-container">
-
-
-
-
 
                 <div class="header-top">
                     <div class="burger">
@@ -26,7 +21,6 @@
                             <span></span>
                             <span></span>
                             <span></span>
-
                             
                             <ul class="burger-menu-elem">
                                 <li class="header-top-nav-ul-li"><a href="#">Home</a></li>
@@ -498,45 +492,7 @@
         </footer>
     </div>
     <span class="msg">device not supported. Please open this site an another device</span>
-    <script>
-        'use strict';
-        let videoSvg = document.querySelector('.video-pres-control-btn-svg');
-        let video = document.querySelector('.video-pres-video');
-        let leftArrow = document.querySelector('.header-bottom-left');
-        let rightArrow = document.querySelector('.header-bottom-right');
-        let headerContainer = document.querySelector('.header-container');
-        
-        leftArrow.addEventListener('click',function(){
-            headerContainer.style.setProperty('background-image','url(../img/header-mountain.jpg)') ;
-            //headerContainer.style.backgroundImage = 'url(../img/header-mountain.jpg)';
-            console.log('click');
-        });
-        
-        rightArrow.addEventListener('click', function(){
-            headerContainer.style.backgroundImage = 'url(../img/header-photo.png)';
-        })
-        
-        videoSvg.addEventListener('click',function(){
-            if (video.paused){
-                video.play();
-            } else{
-                video.pause();
-            }                    
-        })
-        window.addEventListener('scroll',function(event){
-            if(window.pageYOffset > 3000){
-                if (video.paused){
-                    video.play();    
-                }
-            }
-            if(window.pageYOffset > 4000){
-                if (!video.paused){
-                    video.pause();    
-                }
-            }
-            
-            console.log(window.pageYOffset);
-        })
+    <script src ="scripts/script.js">        
     </script>
 </body>
 
